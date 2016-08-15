@@ -266,7 +266,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // *** Get the end point of the drag 
         let touch = touches.first
         let endDrag = touch!.locationInNode(self)
-        let vector = CGVector(dx: startDrag.x - endDrag.x, dy: startDrag.y - endDrag.y)
+        let vector = CGVector(dx: (startDrag.x - endDrag.x) * 0.1 , dy: (startDrag.y - endDrag.y) * 0.1)
         
         if penguin != nil {
             penguin.physicsBody?.applyImpulse(vector) // *** Apply an impulse
